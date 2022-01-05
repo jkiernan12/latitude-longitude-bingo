@@ -1,24 +1,19 @@
-import React, { Component } from 'react'
+import { Routes, Route, useParams } from 'react-router-dom'
 import '../css/App.css';
 import Nav from './Nav'
-import Main from './Main'
+import RegionSelector from './RegionSelector'
+import Game from './Game'
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      // Selected Region
-    }
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Nav />
-        <Main />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <main className="App">
+      <Nav />
+      <Routes>
+        <Route path="/" element={<RegionSelector />} />
+        <Route path="/:region" element={<Game />} />
+      </Routes>
+    </main>
+  );
 }
 
 export default App;
