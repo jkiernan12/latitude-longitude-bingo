@@ -31,7 +31,7 @@ function Game({ setRegion }) {
   
   return (
       <div className="Game">
-          <p>this is the Game section</p>
+          <p>{region}</p>
       </div>
   )
 }
