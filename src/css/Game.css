@@ -1,0 +1,19 @@
+.coordinates {
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+}
+
+.bingo-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 1%;
+    width: 30vw;
+}
+
+.bingo-btn:hover {
+    background-color: gray;
+}

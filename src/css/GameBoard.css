@@ -1,0 +1,9 @@
+.board {
+    display: flex;
+    border: 2px solid green;
+    width: 50vw;
+    height: 75vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
