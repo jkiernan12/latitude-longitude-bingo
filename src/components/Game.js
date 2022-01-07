@@ -23,12 +23,12 @@ import { useParams } from 'react-router-dom'
 //     }
 //   }
 
-function Game({ setRegion }) {
-  let region = useParams().region
+function Game({ region }) {
+  // let region = useParams().region
 
-  useEffect(() => {
-    setRegion(region);
-  }, [region]);
+  // useEffect(() => {
+  //   setRegion(region);
+  // }, [region]);
   
   return (
       <div className="Game">

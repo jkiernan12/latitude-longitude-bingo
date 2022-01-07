@@ -10,10 +10,10 @@ function App() {
 
   return (
     <main className="App">
-      <Nav />
+      <Nav currentRegion={region} setCurrentRegion={setRegion} />
       <Routes>
         <Route path="/" element={<RegionSelector />} />
-        <Route path="/:region" element={<Game setRegion={setRegion} />} />
+        <Route path="/:region" element={<Game region={region} />} />
       </Routes>
     </main>
   );

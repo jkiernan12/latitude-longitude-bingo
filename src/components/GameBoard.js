@@ -25,8 +25,6 @@ const GameBoard = () => {
         return <Square name={fakeCountry} />
     })
 
-    console.log(countries)
-
     return (
         <div className="board">
             {countries}
