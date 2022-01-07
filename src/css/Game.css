@@ -1,0 +1,7 @@
+.Game {
+  display: flex;
+}
+
+.Game-space {
+  width: 50%;
+}

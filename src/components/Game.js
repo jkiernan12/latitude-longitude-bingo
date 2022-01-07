@@ -1,6 +1,7 @@
 import '../css/Game.css';
 import React, { Component, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import GameMap from './GameMap';
 
 // class Game extends Component {
 //     constructor() {
@@ -31,7 +32,10 @@ function Game({ setRegion }) {
   
   return (
       <div className="Game">
+        <section className="Game-space">
           <p>{region}</p>
+        </section>
+          <GameMap />
       </div>
   )
 }
