@@ -1,10 +1,11 @@
-import '../css/RegionSelector.css';
+import '../css/Home.css';
 import { NavLink } from 'react-router-dom'
 
 const RegionSelector = () => {
     return (
         <div>
-            <h2>Please choose a region to get started!</h2>
+            <h1>-Latitude- |Longitude| BINGO</h1>
+            <h3>Please choose a region to get started!</h3>
             <NavLink to="/africa" className="nav-link">Africa</NavLink>
             <NavLink to="/asia" className="nav-link">Asia</NavLink>
             <NavLink to="/australia-oceania" className="nav-link">Australia & Oceania</NavLink>
