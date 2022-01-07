@@ -1,9 +1,9 @@
 import '../css/Square.css';
 
-const Square = () => {
+const Square = ({ name }) => {
     return (
-        <div>
-            <p>this is a Square</p>
+        <div className="square">
+            <p>{name}</p>
         </div>
     )
 }
