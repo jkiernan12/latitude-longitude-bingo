@@ -1,7 +1,7 @@
 import '../css/Home.css';
 import { NavLink } from 'react-router-dom'
 
-const RegionSelector = () => {
+const Home = () => {
     return (
         <div>
             <h1>-Latitude- |Longitude| BINGO</h1>
@@ -17,4 +17,4 @@ const RegionSelector = () => {
     )
 }
 
-export default RegionSelector;
+export default Home;
