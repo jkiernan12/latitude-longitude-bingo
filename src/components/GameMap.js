@@ -1,24 +1,11 @@
-import React, { useEffect } from 'react'
-import { MapContainer, TileLayer } from 'react-leaflet';
+import React, { useEffect, useState } from 'react'
+import { MapContainer, TileLayer, MapConsumer } from 'react-leaflet';
 import { useLeafletContext } from '@react-leaflet/core'
 import L from 'leaflet'
 import 'leaflet-graticule'
 import '../css/GameMap.css'
 
-function GameMap({region}) {
-  const regionCoordinates = {
-    'europe': {center: [51, 22], zoom: 3},
-    'asia': {center: [41, 71], zoom: 3},
-    'africa': {center: [41, 71], zoom: 3},
-    'asia': {center: [41, 71], zoom: 3},
-    'australia-oceania': {center: [41, 71], zoom: 3},
-    'north-america': {center: [41, 71], zoom: 3},
-    'north-america': {center: [41, 71], zoom: 3},
-    'world': {center: [41, 71], zoom: 3}
-  }
 
-  const currentRegionCoordinates = regionCoordinates[region]
-  
 
 function Graticule() {
   const context = useLeafletContext()
@@ -34,13 +21,37 @@ function Graticule() {
   return null
 }
 
+function GameMap({region}) {
+  const regionCoordinates = {
+    'europe': {center: [0, 0], zoom: 3},
+    'asia': {center: [39, 90], zoom: 3.5},
+    'africa': {center: [-10, 10], zoom: 3},
+    'australia-oceania': {center: [0, 0], zoom: 4},
+    'north-america': {center: [0, 0], zoom: 3},
+    'south-america': {center: [0, 0], zoom: 4},
+    'world': {center: [0, 0], zoom: 3}
+  }
+  
+  const [currRegionCoord, setCurrRegionCoord] = useState(regionCoordinates['world']);
+
+  useEffect(() => {
+    setCurrRegionCoord(regionCoordinates[region])
+    console.log(regionCoordinates['south-america'])
+  }, [region])
+
   return (
-    <MapContainer className="map-container" center={[0, 0]} zoom={1.5} scrollWheelZoom={false}>
-    <TileLayer
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-  <Graticule />
-  </MapContainer>
+    <MapContainer className="map-container" center={currRegionCoord.center} zoom={currRegionCoord.zoom} scrollWheelZoom={false}>
+      <TileLayer
+      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <Graticule />
+      <MapConsumer>
+        {(map) => {
+          map.setView(currRegionCoord.center, currRegionCoord.zoom)
+          return null
+        }}
+      </MapConsumer>
+    </MapContainer>
   )
 }
 

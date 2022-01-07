@@ -43,7 +43,7 @@ function Game({ region }) {
           <GameBoard />
           <button className="bingo-btn">Bingo / Reset</button>
         </section>
-        <GameMap />
+        <GameMap region={region} />
       </div>
   )
 }
