@@ -5,13 +5,27 @@ import L from 'leaflet'
 import 'leaflet-graticule'
 import '../css/GameMap.css'
 
-function GameMap() {
+function GameMap({region}) {
+  const regionCoordinates = {
+    'europe': {center: [51, 22], zoom: 3},
+    'asia': {center: [41, 71], zoom: 3},
+    'africa': {center: [41, 71], zoom: 3},
+    'asia': {center: [41, 71], zoom: 3},
+    'australia-oceania': {center: [41, 71], zoom: 3},
+    'north-america': {center: [41, 71], zoom: 3},
+    'north-america': {center: [41, 71], zoom: 3},
+    'world': {center: [41, 71], zoom: 3}
+  }
+
+  const currentRegionCoordinates = regionCoordinates[region]
+  
+
 function Graticule() {
   const context = useLeafletContext()
   L.latlngGraticule({
     showLabel: true,
     zoomInterval: [
-        {start: 2, end: 3, interval: 30},
+        {start: 2, end: 3, interval: 15},
         {start: 4, end: 4, interval: 10},
         {start: 5, end: 7, interval: 5},
         {start: 8, end: 10, interval: 1}
