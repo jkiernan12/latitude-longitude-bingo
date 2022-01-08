@@ -5,8 +5,6 @@ import L from 'leaflet'
 import 'leaflet-graticule'
 import '../css/GameMap.css'
 
-
-
 function Graticule() {
   const context = useLeafletContext()
   L.latlngGraticule({
