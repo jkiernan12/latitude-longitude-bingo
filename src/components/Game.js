@@ -40,11 +40,10 @@ class Game extends Component {
       longDir = 'E'
     }
 
-    console.log(randomCountry)
-
     this.setState({
       currentLat: latNum + latDir,
-      currentLong: longNum + longDir
+      currentLong: longNum + longDir,
+      calledCoordinates: [...this.state.calledCoordinates, randomCountry]
     })
   }
 
