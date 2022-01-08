@@ -1,28 +1,10 @@
 import '../css/GameBoard.css'
 import Square from './Square'
 
-const GameBoard = () => {
-    let fakeCountries = [
-        "North Dakota", 
-        "South Dakota", 
-        "Nebraska", 
-        "Kansas",
-        "Oklahoma",
-        "Texas",
-        "Minnesota",
-        "Iowa",
-        "Arkansas",
-        "Missouri",
-        "Louisiana",
-        "Michigan",
-        "Indiana",
-        "Ohio",
-        "Illinois",
-        "Pennsylvania"
-    ]
+const GameBoard = ({ squares }) => {
 
-    let countries = fakeCountries.map(fakeCountry => {
-        return <Square key={fakeCountry} name={fakeCountry} />
+    let countries = squares.map(country => {
+        return <Square key={country.id} name={country.name} />
     })
 
     return (

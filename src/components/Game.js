@@ -12,10 +12,9 @@ class Game extends Component {
       currentLat: 'N/S',
       currentLong: 'E/W',
       nextBtnTxt: 'Get Coordinates',
-      bingoBtnTxt: 'BINGO!',
+      bingoBtnTxt: 'Set Game Board!',
       calledCoordinates: [],
       currentBoard: [],
-      // TBDeleted:
     }
   }
 
@@ -49,11 +48,44 @@ class Game extends Component {
     return filteredCountries
   }
 
+  handleBingoClick() {
+    this.state.bingoBtnTxt === 'Set Game Board!' ? this.setGameBoard() : this.evaluateBoard()
+  }
+
+  getRandomIndex(arr) {
+    return Math.floor(Math.random() * arr.length)
+  }
+
+  setGameBoard() {
+    let squareCountries = []
+
+    while (squareCountries.length < 16) {
+      let randomIndex = this.getRandomIndex(this.state.currentRegionCountries)
+      let randomCountry = this.state.currentRegionCountries[randomIndex]
+      !squareCountries.includes(randomCountry) && squareCountries.push(randomCountry)
+    }
+
+    this.setState({
+      currentBoard: squareCountries,
+      bingoBtnTxt: 'BINGO!'
+    })
+  }
+
+  evaluateBoard() {
+    console.log('check for win')
+  }
+
   componentDidUpdate() {
     if (this.state.currentRegion !== this.props.region) {
       this.setState({
         currentRegion: this.props.region,
-        currentRegionCountries: this.getFilteredCountries()
+        currentRegionCountries: this.getFilteredCountries(),
+        currentLat: 'N/S',
+        currentLong: 'E/W',
+        nextBtnTxt: 'Get Coordinates',
+        bingoBtnTxt: 'Set Game Board!',
+        calledCoordinates: [],
+        currentBoard: [],
       })
     }
   }
@@ -62,12 +94,6 @@ class Game extends Component {
     this.setState({
       currentRegionCountries: this.getFilteredCountries()
     })
-    /* 
-    On page load:
-    1) Fetch all countries for region
-    2) Send 16 countries to gameboard (set as currentBoard)
-    */
-
   }
     
   render() {
@@ -80,7 +106,7 @@ class Game extends Component {
             <button className="next-btn" onClick={this.getCoordinates}>{this.state.nextBtnTxt}</button>
           </section>
           <GameBoard squares={this.state.currentBoard}/>
-          <button className="bingo-btn">{this.state.bingoBtnTxt}</button>
+          <button className="bingo-btn" onClick={() => this.handleBingoClick()}>{this.state.bingoBtnTxt}</button>
       </div>
     )
     }
