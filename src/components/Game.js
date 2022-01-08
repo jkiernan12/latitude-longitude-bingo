@@ -1,7 +1,6 @@
 import '../css/Game.css';
 import GameBoard from './GameBoard'
 import React, { Component } from 'react'
-import dummyCountries from '../dummyData'
 import GameMap from './GameMap'
 import { fetchCountryData } from '../apiCalls';
 
@@ -61,7 +60,7 @@ class Game extends Component {
       filterRegion = 'south america'
     }
 
-    let filteredCountries = dummyCountries.filter(country => {
+    let filteredCountries = this.state.allCountries.filter(country => {
       let countryRegions = country.regions.data;
       let lowerCaseRegions = countryRegions.map(region => {
         return region.toLowerCase()
@@ -70,7 +69,7 @@ class Game extends Component {
     })
 
     if (this.props.region === 'world') {
-      filteredCountries = dummyCountries
+      filteredCountries = this.state.allCountries
     }
 
     this.setState({
@@ -125,7 +124,7 @@ class Game extends Component {
       .then(data => this.setState({
         allCountries: data
       }))
-      .then(this.setFilteredCountries())
+      .then(() => this.setFilteredCountries())
   }
     
   render() {
