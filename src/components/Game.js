@@ -1,12 +1,15 @@
 import '../css/Game.css';
 import GameBoard from './GameBoard'
 import React, { Component } from 'react'
-import dummyCountries from '../dummyData';
+import dummyCountries from '../dummyData'
+import GameMap from './GameMap'
+import { fetchCountryData } from '../apiCalls';
 
 class Game extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      allCountries: [],
       currentRegion: this.props.region,
       currentRegionCountries: [],
       currentLat: 'N/S',
@@ -47,7 +50,7 @@ class Game extends Component {
     })
   }
 
-  getFilteredCountries() {
+  setFilteredCountries() {
     let filterRegion = this.props.region
 
     if (this.props.region === 'australia-oceania') {
@@ -70,7 +73,9 @@ class Game extends Component {
       filteredCountries = dummyCountries
     }
 
-    return filteredCountries
+    this.setState({
+      currentRegionCountries: filteredCountries
+    })
   }
 
   handleBingoClick() {
@@ -81,7 +86,7 @@ class Game extends Component {
     return Math.floor(Math.random() * arr.length)
   }
 
-  setGameBoard() {
+  setGameBoard() {    
     let squareCountries = []
 
     while (squareCountries.length < 16) {
@@ -104,7 +109,6 @@ class Game extends Component {
     if (this.state.currentRegion !== this.props.region) {
       this.setState({
         currentRegion: this.props.region,
-        currentRegionCountries: this.getFilteredCountries(),
         currentLat: 'N/S',
         currentLong: 'E/W',
         nextBtnTxt: 'Get Coordinates',
@@ -112,18 +116,22 @@ class Game extends Component {
         calledCoordinates: [],
         currentBoard: [],
       })
+      this.setFilteredCountries()
     }
   }
 
   componentDidMount() {
-    this.setState({
-      currentRegionCountries: this.getFilteredCountries()
-    })
+    fetchCountryData()
+      .then(data => this.setState({
+        allCountries: data
+      }))
+      .then(this.setFilteredCountries())
   }
     
   render() {
     return (
       <div className="Game">
+        <section className="GameSpace">
           <p>{this.state.currentRegion}</p>
           <section className="coordinates">
             <h3>{this.state.currentLat}</h3>
@@ -132,6 +140,8 @@ class Game extends Component {
           </section>
           <GameBoard squares={this.state.currentBoard}/>
           <button className="bingo-btn" onClick={() => this.handleBingoClick()}>{this.state.bingoBtnTxt}</button>
+        </section>
+        <GameMap region={this.props.region}/>
       </div>
     )
     }
