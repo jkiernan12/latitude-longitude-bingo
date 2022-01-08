@@ -1,19 +1,24 @@
+/*
+Updates: "Americas" Changed to "North America" for those that did not contain "South America"
+
+*/
+
 const dummyCountries = [
 {
-"id": "b915129d-96e4-4de1-bc2f-a8d9b46876a8",
-"regions": {
-"data": [
-"Europe",
-"Southern Europe"
-]
-},
-"code": "AD",
-"name": "Andorra",
-"latitude": "42.55",
-"longitude": "1.60",
-"flag_path": "./assets/flags/ad.svg",
-"created_at": "2022-01-05T21:38:07.628Z",
-"updated_at": "2022-01-05T21:38:07.628Z"
+    id: "b915129d-96e4-4de1-bc2f-a8d9b46876a8",
+    regions: {
+        "data": [
+            "Europe",
+            "Southern Europe"
+        ]
+    },
+    code: "AD",
+    name: "Andorra",
+    latitude: "42.55",
+    longitude: "1.60",
+    flag_path: "./assets/flags/ad.svg",
+    created_at: "2022-01-05T21:38:07.628Z",
+    updated_at: "2022-01-05T21:38:07.628Z"
 },
 {
 "id": "4819e088-f3ba-4159-9e10-0ba4d389f4b0",
@@ -51,7 +56,7 @@ const dummyCountries = [
 "id": "281c5907-984f-438a-ae8a-82e2e045914a",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -68,7 +73,7 @@ const dummyCountries = [
 "id": "785894c1-a199-4461-bb5c-dad9d8642603",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -227,7 +232,7 @@ const dummyCountries = [
 "id": "a7f00e33-4085-4640-9683-8b5aa9d87ad5",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -276,7 +281,7 @@ const dummyCountries = [
 "id": "a13b93be-0518-47d4-b5ea-44b3f1969fe6",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -408,7 +413,7 @@ const dummyCountries = [
 "id": "afe4b324-179e-4ed8-83a9-89375a4b07b2",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Northern America"
 ]
 },
@@ -474,7 +479,7 @@ const dummyCountries = [
 "id": "b4912a65-250d-488f-964c-e1ee4ef4691b",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -557,7 +562,7 @@ const dummyCountries = [
 "id": "044c48e0-daeb-41e1-950b-d2eb96c59834",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Central America"
 ]
@@ -574,7 +579,7 @@ const dummyCountries = [
 "id": "5293c570-86de-4f5d-ac46-4f0d004bd628",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Northern America"
 ]
 },
@@ -773,7 +778,7 @@ const dummyCountries = [
 "id": "90978c5d-39b5-4d00-9d5d-4448b2284582",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Central America"
 ]
@@ -790,7 +795,7 @@ const dummyCountries = [
 "id": "fc849058-9dec-4612-b571-a1f13c1d85e6",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -921,7 +926,7 @@ const dummyCountries = [
 "id": "c7cf5ff3-e2c1-41a3-b399-816bed62fb9c",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -938,7 +943,7 @@ const dummyCountries = [
 "id": "e03adb9f-c311-4b9c-815f-092d048b49d9",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -1216,7 +1221,7 @@ const dummyCountries = [
 "id": "c974181e-cd20-4da1-932f-99e71ed0e46f",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -1316,7 +1321,7 @@ const dummyCountries = [
 "id": "4d28fdb3-90f1-4709-91cb-ad6315d8d18b",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Northern America"
 ]
 },
@@ -1366,7 +1371,7 @@ const dummyCountries = [
 "id": "1693b988-1304-4985-b90e-24bf7fa958b0",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -1433,7 +1438,7 @@ const dummyCountries = [
 "id": "22e8de05-9348-472b-bf2e-b06ae97de810",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Central America"
 ]
@@ -1545,7 +1550,7 @@ const dummyCountries = [
 "id": "c3a202f4-ab93-4bcf-a8f8-839a0e1cdb7a",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Central America"
 ]
@@ -1578,7 +1583,7 @@ const dummyCountries = [
 "id": "87530494-307f-433d-b3d3-bd5e0f2059cb",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -1789,7 +1794,7 @@ const dummyCountries = [
 "id": "ebf559ed-15fa-4eae-a29d-0116f59e373e",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -1920,7 +1925,7 @@ const dummyCountries = [
 "id": "99a37c9d-263f-45dd-a1a9-28353072d490",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -1985,7 +1990,7 @@ const dummyCountries = [
 "id": "6965f903-df5d-4113-a318-516a06134068",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -2050,7 +2055,7 @@ const dummyCountries = [
 "id": "703b9c11-36fb-4c15-9b05-f2abf90cf1da",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -2391,7 +2396,7 @@ const dummyCountries = [
 "id": "fc2239c6-f544-4747-b5fb-77b9e2e9b615",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -2425,7 +2430,7 @@ const dummyCountries = [
 "id": "d26edce2-358d-42b6-a2a8-3df36503e06c",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -2508,7 +2513,7 @@ const dummyCountries = [
 "id": "57aee729-670e-47f4-8422-cb260932ab06",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Central America"
 ]
@@ -2641,7 +2646,7 @@ const dummyCountries = [
 "id": "949cad6a-4627-4546-92ae-048d0b4d0cbb",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Central America"
 ]
@@ -2770,7 +2775,7 @@ const dummyCountries = [
 "id": "a8596751-2d4d-408c-84bc-691636082d3c",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Central America"
 ]
@@ -2884,7 +2889,7 @@ const dummyCountries = [
 "id": "e8ba84ff-5ae2-491e-be9a-2da09b4332ba",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Northern America"
 ]
 },
@@ -2916,7 +2921,7 @@ const dummyCountries = [
 "id": "89892ee7-2957-4f89-9c8c-b1d4f3dee1c0",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -3359,7 +3364,7 @@ const dummyCountries = [
 "id": "2f25e932-5638-402a-9075-8d5657025344",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Central America"
 ]
@@ -3409,7 +3414,7 @@ const dummyCountries = [
 "id": "f975a51f-558d-4ac5-b9f4-b6804067cbad",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -3605,7 +3610,7 @@ const dummyCountries = [
 "id": "5d0eb215-a281-47d3-8dab-0cc77c766363",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -3720,7 +3725,7 @@ const dummyCountries = [
 "id": "da677820-1100-4859-b5cb-75550a4fee09",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Northern America"
 ]
 },
@@ -3785,7 +3790,7 @@ const dummyCountries = [
 "id": "6474b9ce-d3bf-4d96-b682-4ebb3c9b82e4",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -3819,7 +3824,7 @@ const dummyCountries = [
 "id": "26c1c6b7-1005-4281-8d58-63fa680f5be0",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]
@@ -3836,7 +3841,7 @@ const dummyCountries = [
 "id": "add0cf52-2da5-40a5-8da2-27001d15dee8",
 "regions": {
 "data": [
-"Americas",
+"North America",
 "Latin America and the Caribbean",
 "Caribbean"
 ]

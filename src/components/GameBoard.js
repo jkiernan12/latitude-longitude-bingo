@@ -22,7 +22,7 @@ const GameBoard = () => {
     ]
 
     let countries = fakeCountries.map(fakeCountry => {
-        return <Square name={fakeCountry} />
+        return <Square key={fakeCountry} name={fakeCountry} />
     })
 
     return (
