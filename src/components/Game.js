@@ -42,6 +42,8 @@ class Game extends Component {
       longDir = 'E'
     }
 
+    console.log('called country: ', randomCountry.name)
+
     this.setState({
       currentLat: latNum + latDir,
       currentLong: longNum + longDir,
