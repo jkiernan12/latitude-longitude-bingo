@@ -18,8 +18,34 @@ class Game extends Component {
     }
   }
 
-  getCoordinates() {
-    console.log('heya')
+  getCoordinates = () => {
+    let randomIndex = this.getRandomIndex(this.state.currentRegionCountries)
+    let randomCountry = this.state.currentRegionCountries[randomIndex]
+    while (this.state.calledCoordinates.includes(randomCountry)) {
+      randomIndex = this.getRandomIndex(this.state.currentRegionCountries)
+      randomCountry = this.state.currentRegionCountries[randomIndex]
+    }
+
+    let latNum = randomCountry.latitude
+    let latDir = 'N'
+    let longNum = randomCountry.longitude
+    let longDir = 'W'
+    
+    if (latNum < 0) {
+      latNum = latNum * -1
+      latDir = 'S'
+    }
+    if (longNum < 0) {
+      longNum = longNum * -1
+      longDir = 'E'
+    }
+
+    console.log(randomCountry)
+
+    this.setState({
+      currentLat: latNum + latDir,
+      currentLong: longNum + longDir
+    })
   }
 
   getFilteredCountries() {
