@@ -34,7 +34,7 @@ function GameMap({region}) {
 
   useEffect(() => {
     setCurrRegionCoord(regionCoordinates[region])
-    console.log(regionCoordinates['south-america'])
+    // console.log(regionCoordinates['south-america'])
   }, [region])
 
   return (
