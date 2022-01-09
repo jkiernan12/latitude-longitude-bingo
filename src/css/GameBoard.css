@@ -1,8 +1,8 @@
 .board {
-    display: flex;
-    border: 2px solid green;
-    width: 50vw;
-    height: 65vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;

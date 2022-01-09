@@ -1,8 +1,10 @@
 .Game {
   display: flex;
+  justify-content: stretch;
+  width: 100%;
 }
 
-.Game-space {
+.GameSpace {
   width: 50%;
 } 
 
