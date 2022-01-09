@@ -1,0 +1,32 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50vw;
+}
+
+.modal-content {
+    border: 6px solid #98d740;
+    border-radius: 12px;
+    background-color: antiquewhite;
+    color: gray;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    width: 50vh;
+    height: 50vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+}
+
+.close-btn {
+    width: 6vw;
+    height: 3vw;
+    border: none;
+    font-size: x-large;
+    color: white;
+    background-color: #e2931d;
+    border-radius: 8px;
+    font-weight: bold;
+}

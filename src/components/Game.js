@@ -188,6 +188,10 @@ class Game extends Component {
     })
   }
 
+  closeModal = () => {
+    this.setState({showModal: false})
+  }
+
   componentDidUpdate() {
     if (this.state.currentRegion !== this.props.region) {
       this.setState({
@@ -215,8 +219,8 @@ class Game extends Component {
   render() {
     return (
       <div className="Game">
-        <EndGameModal isOpen={this.state.showModal} message={this.state.winStatus}></EndGameModal>
         <section className="GameSpace">
+          <EndGameModal isOpen={this.state.showModal} message={this.state.winStatus} close={this.closeModal}></EndGameModal>
           <p>{this.state.currentRegion}</p>
           <section className="coordinates">
             <h3>Latitude: {this.state.currentLat}</h3>
