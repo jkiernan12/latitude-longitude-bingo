@@ -29,11 +29,6 @@
   background-color: #e2931d;
 }
 
-/* .nav-link:active {
-    background-color: yellow;
-    color: black;
-} */
-
 .Nav--header {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -45,5 +40,4 @@
   color: #e2931d;
   font-weight: 800;
   font-size: 1.5em;
-  /* padding-left: 1%; */
 }

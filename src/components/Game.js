@@ -187,8 +187,8 @@ class Game extends Component {
         <section className="GameSpace">
           <p>{this.state.currentRegion}</p>
           <section className="coordinates">
-            <h3>{this.state.currentLat}</h3>
-            <h3>{this.state.currentLong}</h3>
+            <h3>Latitude: {this.state.currentLat}</h3>
+            <h3>Longitude: {this.state.currentLong}</h3>
             <button className="next-btn" onClick={this.getCoordinates}>{this.state.nextBtnTxt}</button>
           </section>
           <GameBoard squares={this.state.currentBoard} stamp={(id, space) => this.stampSquare(id, space)}/>
