@@ -1,22 +1,38 @@
 .square {
-    border: 2px solid orange;
-    width: 20%;
-    height: 13vh;
-    padding: 2%;
-}
-
+    aspect-ratio: 1 / 1;
+    margin: 2%;
+    border-radius: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+    font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  }
+  
 .false {
-    background-color: yellow;
+  background-color: white;
 }
 
 .true {
-    background-color: blue;
+  background-color: #d3cece;
+  transform: scale(90%);
 }
 
 .correct-true {
-    color: green;
+    background-color: #98d740;
+    border: none;
 }
 
 .correct-false {
-    color: red;
+    background-color: rgb(209, 84, 84);
+    border: none;
+    color: white;
+}
+
+@media (max-width: 1200px) {
+  .square {
+    font-size: 1em;
+  }
 }
