@@ -2,8 +2,18 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    width: 100%;
+    width: 70%;
+    margin: 0 15%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    justify-content: stretch;
+    align-content: stretch;
 }
+
+  @media (max-width: 1200px) {
+    .board {
+      width: 94%;
+      margin: 0 3%;
+    }
+  }

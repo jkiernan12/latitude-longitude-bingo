@@ -64,3 +64,17 @@
   transform: scale(.97);
   background-color: #b37313;
 }
+
+@media (max-width: 800px) {
+  .Game {
+    flex-direction: column-reverse;
+  }
+
+  .GameSpace {
+    width: 100%;
+  }
+
+  .game-map {
+    width: 100%;
+  }
+}

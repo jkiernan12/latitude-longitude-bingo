@@ -1,5 +1,13 @@
 .map-container {
   height: 80vh;
-  width: 50%;
-  margin: 2% 0;
+  width: 46%;
+  margin: 2%;
+  border-radius: 5%;
+}
+
+@media (max-width: 800px) {
+  .map-container {
+    width: 98%;
+    height: 50vh;
+  }
 }

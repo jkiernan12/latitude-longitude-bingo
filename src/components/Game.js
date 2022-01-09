@@ -194,7 +194,7 @@ class Game extends Component {
           <GameBoard squares={this.state.currentBoard} stamp={(id, space) => this.stampSquare(id, space)}/>
           <button className="bingo-btn" onClick={() => this.handleBingoClick()}>{this.state.bingoBtnTxt}</button>
         </section>
-        <GameMap region={this.props.region}/>
+        <GameMap className="game-map" region={this.props.region}/>
       </div>
     )
   }

@@ -8,6 +8,7 @@
     transition: .2s;
     font-size: 1.5em;
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
   }
   
 .false {
@@ -28,4 +29,10 @@
     background-color: rgb(209, 84, 84);
     border: none;
     color: white;
+}
+
+@media (max-width: 1200px) {
+  .square {
+    font-size: 1em;
+  }
 }
