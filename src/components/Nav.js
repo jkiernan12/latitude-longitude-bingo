@@ -6,7 +6,7 @@ const Nav = () => {
 
     return (
         <nav className="navbar">
-            <h1>-Latitude- |Longitude| BINGO</h1>
+            <h1 className='Nav--header'>-Latitude- |Longitude| <br /><span className='Nav--header__bold'>BINGO</span></h1>
 
             <div className="region-navs">
                 <NavLink to="/africa" className="nav-link">Africa</NavLink>
@@ -16,7 +16,7 @@ const Nav = () => {
                 <NavLink to="/north-america" className="nav-link">North America</NavLink>
                 <NavLink to="/south-america" className="nav-link">South America</NavLink>
                 <NavLink to="/world" className="nav-link">World</NavLink>
-                <NavLink to="/" className="nav-link">Home</NavLink>
+                <NavLink to="/" className="nav-link nav-home-link">Home</NavLink>
             </div>
             
         </nav>
