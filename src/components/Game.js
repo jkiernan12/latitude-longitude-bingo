@@ -1,4 +1,5 @@
 import '../css/Game.css';
+import Modal from 'react-modal';
 import GameBoard from './GameBoard'
 import React, { Component } from 'react'
 import GameMap from './GameMap'
@@ -18,7 +19,8 @@ class Game extends Component {
       bingoBtnTxt: 'Set Game Board!',
       calledCoordinateIds: [],
       currentBoard: [],
-      winStatus: ''
+      winStatus: '',
+      showModal: false
     }
   }
 
@@ -168,7 +170,8 @@ class Game extends Component {
   endGame = () => {
     this.setState({
       getBtnIsDisabled: true,
-      bingoBtnTxt: 'Reset Board'
+      bingoBtnTxt: 'Reset Board',
+      showModal: true
     })
   }
 
@@ -209,8 +212,9 @@ class Game extends Component {
   render() {
     return (
       <div className="Game">
+        <Modal isOpen={this.state.showModal}/>
         <section className="GameSpace">
-          <p>{this.state.winStatus}</p>
+          <p>{this.state.currentRegion}</p>
           <section className="coordinates">
             <h3>{this.state.currentLat}</h3>
             <h3>{this.state.currentLong}</h3>
