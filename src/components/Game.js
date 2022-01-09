@@ -14,7 +14,7 @@ class Game extends Component {
       currentRegionCountries: [],
       currentLat: 'N/S',
       currentLong: 'E/W',
-      nextBtnTxt: 'Get Coordinates',
+      getBtnIsDisabled: true,
       bingoBtnTxt: 'Set Game Board!',
       calledCoordinateIds: [],
       currentBoard: [],
@@ -23,34 +23,39 @@ class Game extends Component {
   }
 
   getCoordinates = () => {
-    let randomIndex = getRandomIndex(this.state.currentRegionCountries)
-    let randomCountry = this.state.currentRegionCountries[randomIndex]
-    while (this.state.calledCoordinateIds.includes(randomCountry.id)) {
-      randomIndex = getRandomIndex(this.state.currentRegionCountries)
-      randomCountry = this.state.currentRegionCountries[randomIndex]
-    }
-
-    let latNum = randomCountry.latitude
-    let latDir = 'N'
-    let longNum = randomCountry.longitude
-    let longDir = 'E'
+    if (this.state.calledCoordinateIds.length === this.state.currentRegionCountries.length) {
+      this.setState({winStatus: 'That\'s all the countries for this region! Please play again!'})
+      this.endGame()
+    } else {
+        let randomIndex = getRandomIndex(this.state.currentRegionCountries)
+        let randomCountry = this.state.currentRegionCountries[randomIndex]
+        while (this.state.calledCoordinateIds.includes(randomCountry.id)) {
+          randomIndex = getRandomIndex(this.state.currentRegionCountries)
+          randomCountry = this.state.currentRegionCountries[randomIndex]
+        }
     
-    if (latNum < 0) {
-      latNum = latNum * -1
-      latDir = 'S'
+        let latNum = randomCountry.latitude
+        let latDir = 'N'
+        let longNum = randomCountry.longitude
+        let longDir = 'E'
+        
+        if (latNum < 0) {
+          latNum = latNum * -1
+          latDir = 'S'
+        }
+        if (longNum < 0) {
+          longNum = longNum * -1
+          longDir = 'W'
+        }
+    
+        console.log('called country: ', randomCountry.name)
+    
+        this.setState({
+          currentLat: latNum + latDir,
+          currentLong: longNum + longDir,
+          calledCoordinateIds: [...this.state.calledCoordinateIds, randomCountry.id]
+        })
     }
-    if (longNum < 0) {
-      longNum = longNum * -1
-      longDir = 'W'
-    }
-
-    console.log('called country: ', randomCountry.name)
-
-    this.setState({
-      currentLat: latNum + latDir,
-      currentLong: longNum + longDir,
-      calledCoordinateIds: [...this.state.calledCoordinateIds, randomCountry.id]
-    })
   }
 
   setFilteredCountries() {
@@ -82,7 +87,9 @@ class Game extends Component {
   }
 
   handleBingoClick() {
-    this.state.bingoBtnTxt === 'Set Game Board!' ? this.setGameBoard() : this.evaluateBoard()
+    this.state.bingoBtnTxt === 'Set Game Board!' && this.setGameBoard()
+    this.state.bingoBtnTxt === 'BINGO!' && this.evaluateBoard() 
+    this.state.bingoBtnTxt === 'Reset Board' && this.resetGame()
   }
 
   setGameBoard() {    
@@ -106,8 +113,9 @@ class Game extends Component {
     })
 
     this.setState({
-      currentBoard: squareCountries,
-      bingoBtnTxt: 'BINGO!'
+      getBtnIsDisabled: false,
+      bingoBtnTxt: 'BINGO!',
+      currentBoard: squareCountries
     })
   }
 
@@ -147,13 +155,30 @@ class Game extends Component {
           })
         })
         errors === 0 && this.setState({winStatus: 'Congrats! You got a BINGO!'})
+        this.endGame()
     }
-  
   }
 
   stampSquare(id, square) {
     this.setState(prevState => {
       return prevState.currentBoard[square].isStamped = !prevState.currentBoard[square].isStamped
+    })
+  }
+
+  endGame = () => {
+    this.setState({
+      getBtnIsDisabled: true,
+      bingoBtnTxt: 'Reset Board'
+    })
+  }
+
+  resetGame = () => {
+    this.setGameBoard()
+    this.setState({
+      currentLat: 'N/S',
+      currentLong: 'E/W',
+      calledCoordinateIds: [],
+      winStatus: ''
     })
   }
 
@@ -163,11 +188,11 @@ class Game extends Component {
         currentRegion: this.props.region,
         currentLat: 'N/S',
         currentLong: 'E/W',
-        nextBtnTxt: 'Get Coordinates',
+        getBtnIsDisabled: true,
         bingoBtnTxt: 'Set Game Board!',
         calledCoordinateIds: [],
         currentBoard: [],
-        winStatus: 'Congrats! You got a BINGO!'
+        winStatus: ''
       })
       this.setFilteredCountries()
     }
@@ -185,11 +210,11 @@ class Game extends Component {
     return (
       <div className="Game">
         <section className="GameSpace">
-          <p>{this.state.currentRegion}</p>
+          <p>{this.state.winStatus}</p>
           <section className="coordinates">
             <h3>{this.state.currentLat}</h3>
             <h3>{this.state.currentLong}</h3>
-            <button className="next-btn" onClick={this.getCoordinates}>{this.state.nextBtnTxt}</button>
+            <button className="next-btn" onClick={this.getCoordinates} disabled={this.state.getBtnIsDisabled}>Get Coordinates</button>
           </section>
           <GameBoard squares={this.state.currentBoard} stamp={(id, space) => this.stampSquare(id, space)}/>
           <button className="bingo-btn" onClick={() => this.handleBingoClick()}>{this.state.bingoBtnTxt}</button>
