@@ -3,6 +3,7 @@ import GameBoard from './GameBoard'
 import React, { Component } from 'react'
 import GameMap from './GameMap'
 import { fetchCountryData } from '../apiCalls';
+import { winningBoards, getRandomIndex } from '../utils'
 
 class Game extends Component {
   constructor(props) {
@@ -15,16 +16,17 @@ class Game extends Component {
       currentLong: 'E/W',
       nextBtnTxt: 'Get Coordinates',
       bingoBtnTxt: 'Set Game Board!',
-      calledCoordinates: [],
+      calledCoordinateIds: [],
       currentBoard: [],
+      winStatus: ''
     }
   }
 
   getCoordinates = () => {
-    let randomIndex = this.getRandomIndex(this.state.currentRegionCountries)
+    let randomIndex = getRandomIndex(this.state.currentRegionCountries)
     let randomCountry = this.state.currentRegionCountries[randomIndex]
-    while (this.state.calledCoordinates.includes(randomCountry)) {
-      randomIndex = this.getRandomIndex(this.state.currentRegionCountries)
+    while (this.state.calledCoordinateIds.includes(randomCountry.id)) {
+      randomIndex = getRandomIndex(this.state.currentRegionCountries)
       randomCountry = this.state.currentRegionCountries[randomIndex]
     }
 
@@ -47,7 +49,7 @@ class Game extends Component {
     this.setState({
       currentLat: latNum + latDir,
       currentLong: longNum + longDir,
-      calledCoordinates: [...this.state.calledCoordinates, randomCountry]
+      calledCoordinateIds: [...this.state.calledCoordinateIds, randomCountry.id]
     })
   }
 
@@ -83,15 +85,11 @@ class Game extends Component {
     this.state.bingoBtnTxt === 'Set Game Board!' ? this.setGameBoard() : this.evaluateBoard()
   }
 
-  getRandomIndex(arr) {
-    return Math.floor(Math.random() * arr.length)
-  }
-
   setGameBoard() {    
     let randomCountries = []
 
     while (randomCountries.length < 16) {
-      let randomIndex = this.getRandomIndex(this.state.currentRegionCountries)
+      let randomIndex = getRandomIndex(this.state.currentRegionCountries)
       let randomCountry = this.state.currentRegionCountries[randomIndex]
       !randomCountries.includes(randomCountry) && randomCountries.push(randomCountry)
     }
@@ -102,7 +100,8 @@ class Game extends Component {
         id: randomCountry.id,
         flag_path: randomCountry.flag_path,
         space: index,
-        stampStatus: 'not-stamped'
+        isStamped: false,
+        correct: null
       }
     })
 
@@ -113,15 +112,48 @@ class Game extends Component {
   }
 
   evaluateBoard() {
-    console.log('check for win')
+    let stampedSquares = this.state.currentBoard.filter(square => {
+      return square.isStamped
+    }).map(square => {
+      return square.space
+    })
+  
+    let wins = []
+    winningBoards.forEach(winBoard => {
+      let match = []
+      winBoard.forEach(square => {
+        match.push(stampedSquares.includes(square))
+      })
+      !match.includes(false) && wins.push(winBoard)
+    })
+
+    if (!wins.length) {
+      this.setState({winStatus: 'Keep playing - try to get four in a row!'})
+    } else {
+      let errors = 0
+        wins.forEach(win => {
+          win.forEach(square => {
+            if (this.state.calledCoordinateIds.includes(this.state.currentBoard[square].id)) {
+              this.setState(prevState => {
+                return prevState.currentBoard[square].correct = true
+              })
+            } else {
+              errors += 1
+              this.setState({winStatus: 'Oops! Not all of those countries were called - check the board for details'})
+              this.setState(prevState => {
+                return prevState.currentBoard[square].correct = false
+              })
+            }
+          })
+        })
+        errors === 0 && this.setState({winStatus: 'Congrats! You got a BINGO!'})
+    }
+  
   }
 
   stampSquare(id, square) {
-    console.log('this square was stamped: ', square)
-    console.log('this id was stamped: ', id)
-
     this.setState(prevState => {
-      return prevState.currentBoard[square].stampStatus = 'stamped'
+      return prevState.currentBoard[square].isStamped = !prevState.currentBoard[square].isStamped
     })
   }
 
@@ -133,8 +165,9 @@ class Game extends Component {
         currentLong: 'E/W',
         nextBtnTxt: 'Get Coordinates',
         bingoBtnTxt: 'Set Game Board!',
-        calledCoordinates: [],
+        calledCoordinateIds: [],
         currentBoard: [],
+        winStatus: 'Congrats! You got a BINGO!'
       })
       this.setFilteredCountries()
     }

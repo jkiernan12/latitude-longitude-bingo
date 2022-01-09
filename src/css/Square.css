@@ -5,10 +5,18 @@
     padding: 2%;
 }
 
-.not-stamped {
+.false {
     background-color: yellow;
 }
 
-.stamped {
+.true {
     background-color: blue;
+}
+
+.correct-true {
+    color: green;
+}
+
+.correct-false {
+    color: red;
 }
