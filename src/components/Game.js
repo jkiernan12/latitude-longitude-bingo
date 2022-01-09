@@ -1,10 +1,13 @@
 import '../css/Game.css';
-import Modal from 'react-modal';
 import GameBoard from './GameBoard'
 import React, { Component } from 'react'
 import GameMap from './GameMap'
-import { fetchCountryData } from '../apiCalls';
+import { fetchCountryData } from '../apiCalls'
 import { winningBoards, getRandomIndex } from '../utils'
+import EndGameModal from './EndGameModal'
+import ReactModal from 'react-modal'
+
+ReactModal.setAppElement(document.getElementById('root'));
 
 class Game extends Component {
   constructor(props) {
@@ -212,7 +215,7 @@ class Game extends Component {
   render() {
     return (
       <div className="Game">
-        <Modal isOpen={this.state.showModal}/>
+        <EndGameModal isOpen={this.state.showModal} message={this.state.winStatus}></EndGameModal>
         <section className="GameSpace">
           <p>{this.state.currentRegion}</p>
           <section className="coordinates">
