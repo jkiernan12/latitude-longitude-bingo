@@ -7,7 +7,7 @@
     background-color: #98d740;
     color: white;
     border-radius: 8px;
-    width: 200px;
+    min-width: 150px;
     text-decoration: none;
     font-weight: bold;
 }
@@ -24,7 +24,7 @@
 .Home--header {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 3.5em;
+  font-size: 3em;
   text-align: center;
   border-radius: 16px;
   line-height: 1.3em;
@@ -38,9 +38,10 @@
 
 .Home--links {
   display: flex;
-  justify-content: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .Home--continents {
-  width: 50%;
+  width: clamp(400px, 50%, 100%)
 }
