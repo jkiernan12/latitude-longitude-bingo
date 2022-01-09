@@ -21,13 +21,13 @@ function Graticule() {
 
 function GameMap({region}) {
   const regionCoordinates = {
-    'europe': {center: [0, 0], zoom: 3},
-    'asia': {center: [39, 90], zoom: 3.5},
-    'africa': {center: [-10, 10], zoom: 3},
-    'australia-oceania': {center: [0, 0], zoom: 4},
-    'north-america': {center: [0, 0], zoom: 3},
-    'south-america': {center: [0, 0], zoom: 4},
-    'world': {center: [0, 0], zoom: 3}
+    'europe': {center: [58, 10], zoom: 4},
+    'asia': {center: [45, 90], zoom: 3},
+    'africa': {center: [0, 20], zoom: 3},
+    'australia-oceania': {center: [-30, 130], zoom: 3},
+    'north-america': {center: [41, -95], zoom: 3},
+    'south-america': {center: [-30, -65], zoom: 3},
+    'world': {center: [0, 0], zoom: 2}
   }
   
   const [currRegionCoord, setCurrRegionCoord] = useState(regionCoordinates['world']);
@@ -41,7 +41,7 @@ function GameMap({region}) {
     <MapContainer className="map-container" center={currRegionCoord.center} zoom={currRegionCoord.zoom} scrollWheelZoom={false}>
       <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${process.env.REACT_APP_MAP_API}`} />
       <Graticule />
       <MapConsumer>
         {(map) => {
