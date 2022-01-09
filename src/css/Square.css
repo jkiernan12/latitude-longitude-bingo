@@ -1,6 +1,22 @@
 .square {
     border: 2px solid orange;
     width: 20%;
-    height: 16vh;
+    height: 13vh;
     padding: 2%;
+}
+
+.false {
+    background-color: yellow;
+}
+
+.true {
+    background-color: blue;
+}
+
+.correct-true {
+    color: green;
+}
+
+.correct-false {
+    color: red;
 }

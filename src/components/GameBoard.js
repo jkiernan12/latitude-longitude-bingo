@@ -1,33 +1,23 @@
 import '../css/GameBoard.css'
 import Square from './Square'
 
-const GameBoard = () => {
-    let fakeCountries = [
-        "North Dakota", 
-        "South Dakota", 
-        "Nebraska", 
-        "Kansas",
-        "Oklahoma",
-        "Texas",
-        "Minnesota",
-        "Iowa",
-        "Arkansas",
-        "Missouri",
-        "Louisiana",
-        "Michigan",
-        "Indiana",
-        "Ohio",
-        "Illinois",
-        "Pennsylvania"
-    ]
+const GameBoard = ({ squares, stamp }) => {
 
-    let countries = fakeCountries.map(fakeCountry => {
-        return <Square name={fakeCountry} />
+    let countries = squares.map(square => {
+        return <Square key={square.id} id={square.id} className={`square square${square.space} ${square.isStamped} correct-${square.correct}`} space={square.space} name={square.name} stamp={stamp}/>
     })
+
+    let spaces = []
+    for (let i = 0; i < 16; i++) {
+        spaces.push(<Square key={i} id={i} className={`square space false`} space={i} name={''} stamp={stamp}/>)
+    }
 
     return (
         <div className="board">
-            {countries}
+            {squares.length ? 
+                countries :
+                spaces
+            }
         </div>
     )
 }

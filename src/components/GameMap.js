@@ -5,8 +5,6 @@ import L from 'leaflet'
 import 'leaflet-graticule'
 import '../css/GameMap.css'
 
-
-
 function Graticule() {
   const context = useLeafletContext()
   L.latlngGraticule({
@@ -36,7 +34,7 @@ function GameMap({region}) {
 
   useEffect(() => {
     setCurrRegionCoord(regionCoordinates[region])
-    console.log(regionCoordinates['south-america'])
+    // console.log(regionCoordinates['south-america'])
   }, [region])
 
   return (

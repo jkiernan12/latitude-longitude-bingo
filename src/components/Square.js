@@ -1,8 +1,8 @@
 import '../css/Square.css';
 
-const Square = ({ name }) => {
+const Square = ({ id, className, space, name, stamp }) => {
     return (
-        <div className="square">
+        <div className={className} onClick={() => stamp(id, space)}>
             <p>{name}</p>
         </div>
     )
