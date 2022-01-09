@@ -1,6 +1,14 @@
 .square {
     border: 2px solid orange;
     width: 20%;
-    height: 12vh;
+    height: 13vh;
     padding: 2%;
+}
+
+.not-stamped {
+    background-color: yellow;
+}
+
+.stamped {
+    background-color: blue;
 }

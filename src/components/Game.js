@@ -31,7 +31,7 @@ class Game extends Component {
     let latNum = randomCountry.latitude
     let latDir = 'N'
     let longNum = randomCountry.longitude
-    let longDir = 'W'
+    let longDir = 'E'
     
     if (latNum < 0) {
       latNum = latNum * -1
@@ -39,7 +39,7 @@ class Game extends Component {
     }
     if (longNum < 0) {
       longNum = longNum * -1
-      longDir = 'E'
+      longDir = 'W'
     }
 
     console.log('called country: ', randomCountry.name)
@@ -88,13 +88,23 @@ class Game extends Component {
   }
 
   setGameBoard() {    
-    let squareCountries = []
+    let randomCountries = []
 
-    while (squareCountries.length < 16) {
+    while (randomCountries.length < 16) {
       let randomIndex = this.getRandomIndex(this.state.currentRegionCountries)
       let randomCountry = this.state.currentRegionCountries[randomIndex]
-      !squareCountries.includes(randomCountry) && squareCountries.push(randomCountry)
+      !randomCountries.includes(randomCountry) && randomCountries.push(randomCountry)
     }
+
+    let squareCountries = randomCountries.map((randomCountry, index) => {
+      return {
+        name: randomCountry.name,
+        id: randomCountry.id,
+        flag_path: randomCountry.flag_path,
+        space: index,
+        stampStatus: 'not-stamped'
+      }
+    })
 
     this.setState({
       currentBoard: squareCountries,
@@ -104,6 +114,15 @@ class Game extends Component {
 
   evaluateBoard() {
     console.log('check for win')
+  }
+
+  stampSquare(id, square) {
+    console.log('this square was stamped: ', square)
+    console.log('this id was stamped: ', id)
+
+    this.setState(prevState => {
+      return prevState.currentBoard[square].stampStatus = 'stamped'
+    })
   }
 
   componentDidUpdate() {
@@ -139,13 +158,13 @@ class Game extends Component {
             <h3>{this.state.currentLong}</h3>
             <button className="next-btn" onClick={this.getCoordinates}>{this.state.nextBtnTxt}</button>
           </section>
-          <GameBoard squares={this.state.currentBoard}/>
+          <GameBoard squares={this.state.currentBoard} stamp={(id, space) => this.stampSquare(id, space)}/>
           <button className="bingo-btn" onClick={() => this.handleBingoClick()}>{this.state.bingoBtnTxt}</button>
         </section>
         <GameMap region={this.props.region}/>
       </div>
     )
-    }
+  }
 }
 
 export default Game;
