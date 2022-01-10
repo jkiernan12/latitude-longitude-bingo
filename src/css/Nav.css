@@ -4,11 +4,11 @@
 }
 
 .region-navs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  width: 100%;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    align-items: center;  
 }
 
 .nav-link {
@@ -32,6 +32,11 @@
 
 .nav-link:active {
   transform: scale(95%);
+}
+
+.active {
+  cursor: default;
+  text-decoration: underline wavy #e2931d;
 }
 
 .nav-home-link {
