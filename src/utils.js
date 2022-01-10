@@ -17,3 +17,22 @@ export const winningBoards = [
 export const getRandomIndex = (arr) => {
     return Math.floor(Math.random() * arr.length)
   }
+
+export const getRandomList = (arr, length) => {
+    if (arr.length < length) {
+        return false
+    }
+
+    let randomList = []
+    for (let i = 0; i < length; i++) {
+        let randomIndex = getRandomIndex(arr)
+        let randomItem = arr[randomIndex]
+        while (randomList.includes(randomItem)) {
+          randomIndex = getRandomIndex(arr)
+          randomItem = arr[randomIndex]
+        }
+        randomList.push(randomItem)
+    }
+
+    return randomList
+}
