@@ -224,7 +224,6 @@ class Game extends Component {
       <div className="Game">
         <section className="GameSpace">
           <EndGameModal isOpen={this.state.showModal} message={this.state.winStatus} close={this.closeModal}></EndGameModal>
-          <p>{this.state.currentRegion}</p>
           <section className="coordinates">
             <h3>Latitude: {this.state.currentLat}</h3>
             <h3>Longitude: {this.state.currentLong}</h3>
