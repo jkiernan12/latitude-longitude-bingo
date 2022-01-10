@@ -25,6 +25,11 @@
   font-weight: bold;
 }
 
+.active {
+  cursor: default;
+  text-decoration: underline wavy #e2931d;
+}
+
 .nav-home-link {
   background-color: #e2931d;
 }
