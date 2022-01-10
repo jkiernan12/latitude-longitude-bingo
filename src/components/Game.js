@@ -168,9 +168,11 @@ class Game extends Component {
   }
 
   stampSquare(id, square) {
-    this.setState(prevState => {
-      return prevState.currentBoard[square].isStamped = !prevState.currentBoard[square].isStamped
-    })
+    if (this.state.currentBoard.length) {
+      this.setState(prevState => {
+        return prevState.currentBoard[square].isStamped = !prevState.currentBoard[square].isStamped
+      })
+    }
   }
 
   endGame = () => {
