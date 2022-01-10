@@ -20,4 +20,7 @@ describe('Landing page', () => {
     cy.get('.Home--link').should('contain', 'South America')
     cy.get('.Home--link').should('contain', 'World')
   })
+  it('should contain a world-map image', () => {
+    cy.get('.Home--continents')
+  })
 })
