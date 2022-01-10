@@ -58,6 +58,13 @@ describe('South America game', () => {
       cy.get('.next-btn').click();
     }
     cy.get('.modal-content').contains('That\'s all the countries for this region! Please play again!')
-
+  })
+  it('should let a player close the modal', () => {
+    cy.get('.bingo-btn').click();
+    for (let i = 0; i < 17; i++){
+      cy.get('.next-btn').click();
+    }
+    cy.get('.close-btn').click();
+    cy.get('.modal-content').should('not.exist')
   })
 })
