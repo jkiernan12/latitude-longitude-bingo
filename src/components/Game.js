@@ -92,6 +92,7 @@ class Game extends Component {
   }
 
   handleBingoClick() {
+    this.state.error ? this.setState({showModal: true}) :
     this.state.bingoBtnTxt === 'Set Game Board!' && this.setGameBoard()
     this.state.bingoBtnTxt === 'BINGO!' && this.evaluateBoard() 
     this.state.bingoBtnTxt === 'Reset Board' && this.resetGame()
@@ -213,16 +214,22 @@ class Game extends Component {
         allCountries: data
       }))
       .then(() => this.setFilteredCountries())
-      .catch(err => this.setState({
-        error: err.message
-      }))
+      .catch(err => 
+        {
+          let message = (err.message === 'Failed to fetch') ? 'Oops! There was a problem. Please check your internet connection or try again later.' : err.message
+          this.setState({
+            error: message,
+            showModal: true
+          })
+        }
+      )
   }
     
   render() {
     return (
       <div className="Game">
         <section className="GameSpace">
-          <EndGameModal isOpen={this.state.showModal} message={this.state.winStatus} close={this.closeModal}></EndGameModal>
+          <EndGameModal isOpen={this.state.showModal} message={this.state.error ? this.state.error : this.state.winStatus} close={this.closeModal}></EndGameModal>
           <section className="coordinates">
             <h3>Latitude: {this.state.currentLat}</h3>
             <h3>Longitude: {this.state.currentLong}</h3>
