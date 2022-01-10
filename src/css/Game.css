@@ -36,10 +36,17 @@
   transform: scale(1.05);
 }
 
-.next-btn:active {
+.next-btn:disabled {
+  background-color: gray;
+  cursor: default;
+  transform: none;
+}
+
+
+/* .next-btn:active {
   transform: scale(.95);
   background-color: #70a525;
-}
+} */
 
 .bingo-btn {
   background-color: #e2931d;
