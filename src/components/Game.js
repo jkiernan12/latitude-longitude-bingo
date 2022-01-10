@@ -141,7 +141,10 @@ class Game extends Component {
     })
 
     if (!wins.length) {
-      this.setState({winStatus: 'Keep playing - try to get four in a row!'})
+      this.setState({
+        winStatus: 'Keep playing - try to get four in a row!',
+        showModal: true
+      })
     } else {
       let errors = 0
         wins.forEach(win => {
