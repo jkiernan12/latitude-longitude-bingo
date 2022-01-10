@@ -61,6 +61,7 @@ describe('South America game', () => {
     cy.get('.square').contains('Peru').parent().should('have.class', 'correct-true');
     cy.get('.square').contains('Guyana').parent().should('have.class', 'correct-true');
     cy.get('.square').contains('Paraguay').parent().should('have.class', 'correct-true');
+    cy.get('.modal-content').contains('BINGO!')
   })
   it('should show a modal when the player runs out of coordinates', () => {
     cy.get('.bingo-btn').click();
