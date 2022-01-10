@@ -328,6 +328,12 @@ describe('async stubbing', () => {
   it('should be able to serve coordinates', () => {
     cy.get('.Home--link').contains('Africa').click();
     cy.get('.bingo-btn').click();
+    cy.get('.square').contains(/Angola|Burundi/);
+    cy.get('.square').contains(/Algeria|Ethiopia/);
+  })
+  it('should be able to serve coordinates', () => {
+    cy.get('.Home--link').contains('Africa').click();
+    cy.get('.bingo-btn').click();
     cy.get('.next-btn').click();
     cy.get('h3').contains(/S|N/)
     cy.get('h3').next().contains(/E|W/)
