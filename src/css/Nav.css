@@ -31,7 +31,7 @@
 }
 
 .nav-link:active {
-  transform: scale(95%);
+  transform: none;
 }
 
 .active {
