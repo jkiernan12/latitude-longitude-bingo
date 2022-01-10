@@ -30,6 +30,7 @@ describe('South America game', () => {
     cy.get('.square').contains('Brazil')
   })
   it('should be able to serve up a pair of coordinates', () => {
+    cy.get('.bingo-btn').click();
     cy.get('.next-btn').click();
     cy.get('h3').contains(/S|N/)
     cy.get('h3').next().contains(/E|W/)
