@@ -12,6 +12,9 @@ describe('South America game', () => {
     cy.get('.coordinates').contains('E/W');
     cy.get('.coordinates').contains('Get Coordinates');
   })
+  it('should prevent a player from getting coordinates until the game board is set', () => {
+    cy.get('.next-btn').should('be.disabled');
+  })
   it('should have a button for setting the game board', () => {
     cy.get('.bingo-btn').contains('Set Game Board!');
   })
