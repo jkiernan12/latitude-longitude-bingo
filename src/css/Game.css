@@ -56,13 +56,35 @@
   box-shadow: 0, 0, black;
 }
 
+.animate-pulse {
+  animation-duration: .7s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.animate-pulse:hover {
+  animation: none;
+}
+
 .bingo-btn:hover {
   transform: scale(1.03);
+  animation: none;
 }
 
 .bingo-btn:active {
   transform: scale(.97);
   background-color: #b37313;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(100%)
+  }
+  
+  to {
+    transform: scale(105%)
+  }
 }
 
 @media (max-width: 800px) {

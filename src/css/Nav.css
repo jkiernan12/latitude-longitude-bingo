@@ -43,6 +43,12 @@
   font-weight: 400;
   font-size: 1.5em;
   margin: 1%;
+  color: black;
+}
+
+.Nav--header__link {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .Nav--header__bold {
