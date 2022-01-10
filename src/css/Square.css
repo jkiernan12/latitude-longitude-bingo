@@ -1,12 +1,12 @@
 .square {
     aspect-ratio: 1 / 1;
-    margin: 2%;
     border-radius: 8%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: .2s;
-    font-size: 1.5em;
+    font-size: 1em;
+    line-height: .85em;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
   }
@@ -33,6 +33,6 @@
 
 @media (max-width: 1200px) {
   .square {
-    font-size: 1em;
+    font-size: .6em;
   }
 }

@@ -1,14 +1,14 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .region-navs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
 }
 
 .nav-link {
@@ -23,6 +23,15 @@
   min-width: 120px;
   text-decoration: none;
   font-weight: bold;
+  transition: .1s;
+}
+
+.nav-link:hover {
+  transform: scale(105%);
+}
+
+.nav-link:active {
+  transform: scale(95%);
 }
 
 .nav-home-link {
