@@ -3,7 +3,7 @@ import GameBoard from './GameBoard'
 import React, { Component } from 'react'
 import GameMap from './GameMap'
 import { fetchCountryData } from '../apiCalls'
-import { winningBoards, getRandomIndex } from '../utils'
+import { winningBoards, getRandomList } from '../utils'
 import EndGameModal from './EndGameModal'
 import ReactModal from 'react-modal'
 
@@ -32,11 +32,9 @@ class Game extends Component {
       this.setState({winStatus: 'That\'s all the countries for this region! Please play again!'})
       this.endGame()
     } else {
-        let randomIndex = getRandomIndex(this.state.currentRegionCountries)
-        let randomCountry = this.state.currentRegionCountries[randomIndex]
+      let randomCountry = getRandomList(this.state.currentRegionCountries, 1)[0]
         while (this.state.calledCoordinateIds.includes(randomCountry.id)) {
-          randomIndex = getRandomIndex(this.state.currentRegionCountries)
-          randomCountry = this.state.currentRegionCountries[randomIndex]
+          randomCountry = getRandomList(this.state.currentRegionCountries, 1)[0]
         }
     
         let latNum = randomCountry.latitude
@@ -86,25 +84,22 @@ class Game extends Component {
       filteredCountries = this.state.allCountries
     }
 
+    let maxCountries = (filteredCountries.length < 20) ? filteredCountries.length : 20
+
     this.setState({
-      currentRegionCountries: filteredCountries
+      currentRegionCountries: getRandomList(filteredCountries, maxCountries)
     })
   }
 
   handleBingoClick() {
+    this.state.error ? this.setState({showModal: true}) :
     this.state.bingoBtnTxt === 'Set Game Board!' && this.setGameBoard()
     this.state.bingoBtnTxt === 'BINGO!' && this.evaluateBoard() 
     this.state.bingoBtnTxt === 'Reset Board' && this.resetGame()
   }
 
   setGameBoard() {    
-    let randomCountries = []
-
-    while (randomCountries.length < 16) {
-      let randomIndex = getRandomIndex(this.state.currentRegionCountries)
-      let randomCountry = this.state.currentRegionCountries[randomIndex]
-      !randomCountries.includes(randomCountry) && randomCountries.push(randomCountry)
-    }
+    let randomCountries = getRandomList(this.state.currentRegionCountries, 16)
 
     let squareCountries = randomCountries.map((randomCountry, index) => {
       return {
@@ -219,13 +214,22 @@ class Game extends Component {
         allCountries: data
       }))
       .then(() => this.setFilteredCountries())
+      .catch(err => 
+        {
+          let message = (err.message === 'Failed to fetch') ? 'Oops! There was a problem. Please check your internet connection or try again later.' : err.message
+          this.setState({
+            error: message,
+            showModal: true
+          })
+        }
+      )
   }
     
   render() {
     return (
       <div className="Game">
         <section className="GameSpace">
-          <EndGameModal isOpen={this.state.showModal} message={this.state.winStatus} close={this.closeModal}></EndGameModal>
+          <EndGameModal isOpen={this.state.showModal} message={this.state.error ? this.state.error : this.state.winStatus} close={this.closeModal}></EndGameModal>
           <section className="coordinates">
             <h3>Latitude: {this.state.currentLat}</h3>
             <h3>Longitude: {this.state.currentLong}</h3>
