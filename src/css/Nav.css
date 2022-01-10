@@ -6,8 +6,8 @@
 .region-navs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 100%;
+    justify-content: center;
+    width: 50%;
     align-items: center;
 }
 
@@ -23,6 +23,11 @@
   min-width: 120px;
   text-decoration: none;
   font-weight: bold;
+}
+
+.active {
+  cursor: default;
+  text-decoration: underline wavy #e2931d;
 }
 
 .nav-home-link {
