@@ -6,8 +6,8 @@
 .region-navs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 100%;
+    justify-content: center;
+    width: 50%;
     align-items: center;
 }
 
