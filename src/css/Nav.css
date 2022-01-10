@@ -1,6 +1,6 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .region-navs {
@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 50%;
-    align-items: center;
+    align-items: center;  
 }
 
 .nav-link {
@@ -23,6 +23,15 @@
   min-width: 120px;
   text-decoration: none;
   font-weight: bold;
+  transition: .1s;
+}
+
+.nav-link:hover {
+  transform: scale(105%);
+}
+
+.nav-link:active {
+  transform: none;
 }
 
 .active {
@@ -39,6 +48,12 @@
   font-weight: 400;
   font-size: 1.5em;
   margin: 1%;
+  color: black;
+}
+
+.Nav--header__link {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .Nav--header__bold {

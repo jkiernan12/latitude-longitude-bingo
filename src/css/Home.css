@@ -10,6 +10,16 @@
     min-width: 150px;
     text-decoration: none;
     font-weight: bold;
+    transition: .1s;
+}
+
+.Home--link:hover {
+  transform: scale(1.05);
+}
+
+.Home--link:active {
+  transform: scale(.95);
+  background-color: #70a525;
 }
 
 .Home {

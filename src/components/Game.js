@@ -168,9 +168,11 @@ class Game extends Component {
   }
 
   stampSquare(id, square) {
-    this.setState(prevState => {
-      return prevState.currentBoard[square].isStamped = !prevState.currentBoard[square].isStamped
-    })
+    if (this.state.currentBoard.length) {
+      this.setState(prevState => {
+        return prevState.currentBoard[square].isStamped = !prevState.currentBoard[square].isStamped
+      })
+    }
   }
 
   endGame = () => {
@@ -227,10 +229,10 @@ class Game extends Component {
           <section className="coordinates">
             <h3>Latitude: {this.state.currentLat}</h3>
             <h3>Longitude: {this.state.currentLong}</h3>
-            <button className="next-btn" onClick={this.getCoordinates} disabled={this.state.getBtnIsDisabled}>Get Coordinates</button>
+            <button className={this.state.currentLat === 'N/S' && this.state.bingoBtnTxt !== 'Set Game Board!' ? "next-btn animate-pulse" : "next-btn"} onClick={this.getCoordinates} disabled={this.state.getBtnIsDisabled}>Get Coordinates</button>
           </section>
           <GameBoard squares={this.state.currentBoard} stamp={(id, space) => this.stampSquare(id, space)}/>
-          <button className="bingo-btn" onClick={() => this.handleBingoClick()}>{this.state.bingoBtnTxt}</button>
+          <button className={this.state.bingoBtnTxt === 'Set Game Board!' ? "bingo-btn animate-pulse" : "bingo-btn"} onClick={() => this.handleBingoClick()}>{this.state.bingoBtnTxt}</button>
         </section>
         <GameMap className="game-map" region={this.props.region}/>
       </div>
