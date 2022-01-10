@@ -7,6 +7,9 @@ describe('South America game', () => {
     cy.get('.board');
     cy.get('.square').should('have.length', 16)
   })
+  it('should have an active nav-link for the current region', () => {
+    cy.get('.nav-link').contains('South America').should('have.class', 'active')
+  })
   it('should have an area for displaying coordinates', () => {
     cy.get('.coordinates').contains('N/S');
     cy.get('.coordinates').contains('E/W');
