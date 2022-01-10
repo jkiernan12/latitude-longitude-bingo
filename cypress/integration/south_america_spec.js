@@ -24,6 +24,10 @@ describe('South America game', () => {
   it('should have a map displaying the region', () => {
     cy.get('.leaflet-container')
   })
+  it('should let the user zoom in and out of the map', () => {
+    cy.get('.leaflet-control-zoom-in').click();
+    cy.get('.leaflet-control-zoom-out').click();
+  })
   it('should be able to populate the game board with coordinates', () => {
     cy.get('.bingo-btn').click();
     cy.get('.square').contains('Peru')
