@@ -1,7 +1,7 @@
 describe('South America game', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
-    cy.get('.nav-link').contains('South America').click()
+    cy.get('.Home--link').contains('South America').click()
   })
   it('should display a bingo grid', () => {
     cy.get('.board');
