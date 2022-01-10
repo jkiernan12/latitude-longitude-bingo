@@ -323,19 +323,58 @@ describe('async stubbing', () => {
         "updated_at": "2022-01-05T21:38:07.628Z"
     }]
   }).as('africa-abridged')
-    cy.visit('http://localhost:3000/')
-  })
-  it('should be able to serve coordinates', () => {
+    cy.visit('http://localhost:3000/');
     cy.get('.Home--link').contains('Africa').click();
+  })
+  it('should display a bingo grid', () => {
+    cy.get('.board');
+    cy.get('.square').should('have.length', 16)
+  })
+  it('should have an active nav-link for the current region', () => {
+    cy.get('.nav-link').contains('Africa').should('have.class', 'active')
+  })
+  it('should have an area for displaying coordinates', () => {
+    cy.get('.coordinates').contains('N/S');
+    cy.get('.coordinates').contains('E/W');
+    cy.get('.coordinates').contains('Get Coordinates');
+  })
+  it('should prevent a player from getting coordinates until the game board is set', () => {
+    cy.get('.next-btn').should('be.disabled');
+  })
+  it('should have a button for setting the game board', () => {
+    cy.get('.bingo-btn').contains('Set Game Board!');
+  })
+  it('should be able to populate the game board', () => {
     cy.get('.bingo-btn').click();
-    cy.get('.square').contains(/Angola|Burundi/);
-    cy.get('.square').contains(/Algeria|Ethiopia/);
+    cy.get('.square').contains(/Angola|Burundi|Ethiopia|Benin/);
+    cy.get('.square').contains(/Gambia|Djibouti|Cameroon|Botswana/);
   })
   it('should be able to serve coordinates', () => {
-    cy.get('.Home--link').contains('Africa').click();
     cy.get('.bingo-btn').click();
     cy.get('.next-btn').click();
     cy.get('h3').contains(/S|N/)
     cy.get('h3').next().contains(/E|W/)
+  })
+  it('should have a map displaying the region', () => {
+    cy.get('.leaflet-container')
+  })
+  it('should let the user zoom in and out of the map', () => {
+    cy.get('.leaflet-control-zoom-in').click();
+    cy.get('.leaflet-control-zoom-out').click();
+  })
+  it('should show a modal when the player runs out of coordinates', () => {
+    cy.get('.bingo-btn').click();
+    for (let i = 0; i < 21; i++){
+      cy.get('.next-btn').click();
+    }
+    cy.get('.modal-content').contains('That\'s all the countries for this region! Please play again!')
+  })
+  it('should let a player close the modal', () => {
+    cy.get('.bingo-btn').click();
+    for (let i = 0; i < 21; i++){
+      cy.get('.next-btn').click();
+    }
+    cy.get('.close-btn').click();
+    cy.get('.modal-content').should('not.exist')
   })
 })
