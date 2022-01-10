@@ -43,26 +43,21 @@ describe('South America game', () => {
   })
   it('should be able to declare a bingo', () => {
     cy.get('.bingo-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
-    cy.get('.next-btn').click();
+    for (let i = 0; i < 16; i++){
+      cy.get('.next-btn').click();
+    }
     cy.get('.square').click({multiple: true});
     cy.get('.bingo-btn').click();
     cy.get('.square').contains('Peru').parent().should('have.class', 'correct-true');
     cy.get('.square').contains('Guyana').parent().should('have.class', 'correct-true');
     cy.get('.square').contains('Paraguay').parent().should('have.class', 'correct-true');
+  })
+  it('should show a modal when the player runs out of coordinates', () => {
+    cy.get('.bingo-btn').click();
+    for (let i = 0; i < 17; i++){
+      cy.get('.next-btn').click();
+    }
+    cy.get('.modal-content').contains('That\'s all the countries for this region! Please play again!')
+
   })
 })
