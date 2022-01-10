@@ -7,7 +7,7 @@
 }
 
 .modal-content {
-    border: 6px solid #98d740;
+    border-top: 6px solid #98d740;
     border-radius: 12px;
     background-color: antiquewhite;
     color: gray;
@@ -21,12 +21,18 @@
 }
 
 .close-btn {
-    width: 6vw;
-    height: 3vw;
+    width: 1.5em;
+    height: 1.5em;
     border: none;
     font-size: x-large;
     color: white;
     background-color: #e2931d;
     border-radius: 8px;
     font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    .modal {
+        width: 100vw;
+    }
 }

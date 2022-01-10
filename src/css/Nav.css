@@ -1,3 +1,5 @@
+/* #75CEEF */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -30,13 +32,13 @@
   transform: scale(105%);
 }
 
-.nav-link:active {
+.active:hover {
   transform: none;
 }
 
 .active {
   cursor: default;
-  text-decoration: underline wavy #e2931d;
+  border-bottom: 3px solid #e2931d;
 }
 
 .nav-home-link {
