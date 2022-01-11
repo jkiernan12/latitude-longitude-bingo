@@ -14,7 +14,10 @@ function Graticule() {
         {start: 4, end: 4, interval: 10},
         {start: 5, end: 7, interval: 5},
         {start: 8, end: 10, interval: 1}
-    ]
+    ],
+    color: '#aaa',
+    font: '800 1.5em Poppins',
+    fontColor: '#e2931d'
   }).addTo(context.map)
   return null
 }
