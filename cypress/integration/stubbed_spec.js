@@ -1,6 +1,6 @@
 describe('async stubbing', () => {
   beforeEach(() => {
-    cy.intercept('get', 'http://localhost:8080/api/v1/countries', {
+    cy.intercept('get', 'https://latitude-longitude-bingo-api.herokuapp.com/api/v1/countries', {
       statusCode: 200,
       body: [{
         "id": "f830aa92-ec9c-4b14-a84c-c06a06174dbb",
@@ -381,7 +381,7 @@ describe('async stubbing', () => {
 
 describe('API error handling', () => {
   beforeEach(() => {
-    cy.intercept('get', 'http://localhost:8080/api/v1/countries', {
+    cy.intercept('get', 'https://latitude-longitude-bingo-api.herokuapp.com/api/v1/countries', {
       statusCode: 500,
       body: {
         message: 'Oops! There was a problem.'
