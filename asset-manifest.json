@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/latitude-longitude-bingo/static/css/main.e8edc212.css",
+    "main.js": "/latitude-longitude-bingo/static/js/main.c70453cd.js",
+    "static/js/787.a834402e.chunk.js": "/latitude-longitude-bingo/static/js/787.a834402e.chunk.js",
+    "static/media/Continents.svg": "/latitude-longitude-bingo/static/media/Continents.e4d0fdcb339b5628fe34ce30d580cc2c.svg",
+    "index.html": "/latitude-longitude-bingo/index.html",
+    "main.e8edc212.css.map": "/latitude-longitude-bingo/static/css/main.e8edc212.css.map",
+    "main.c70453cd.js.map": "/latitude-longitude-bingo/static/js/main.c70453cd.js.map",
+    "787.a834402e.chunk.js.map": "/latitude-longitude-bingo/static/js/787.a834402e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8edc212.css",
+    "static/js/main.c70453cd.js"
+  ]
+}
