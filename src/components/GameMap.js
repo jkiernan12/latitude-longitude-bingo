@@ -12,10 +12,11 @@ function Graticule() {
     zoomInterval: [
         {start: 2, end: 3, interval: 15},
         {start: 4, end: 4, interval: 10},
-        {start: 5, end: 7, interval: 5},
-        {start: 8, end: 10, interval: 1}
+        {start: 5, end: 6, interval: 5},
+        {start: 7, end: 8, interval: 1},
+        {start: 9, end: 10, interval: .5}
     ],
-    color: '#aaa',
+    color: '#aaaaaa85',
     font: '800 1.5em Poppins',
     fontColor: '#e2931d'
   }).addTo(context.map)
