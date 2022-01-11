@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import '../css/GameBoard.css'
 import Square from './Square'
 
@@ -9,7 +10,7 @@ const GameBoard = ({ squares, stamp }) => {
 
     let spaces = []
     for (let i = 0; i < 16; i++) {
-        spaces.push(<Square key={i} id={i} className={`square space false`} space={i} name={''} stamp={stamp}/>)
+        spaces.push(<Square key={i} className={`square space false`}/>)
     }
 
     return (
@@ -23,3 +24,7 @@ const GameBoard = ({ squares, stamp }) => {
 }
 
 export default GameBoard;
+
+GameBoard.propTypes = {
+    squares: PropTypes.array,
+}
