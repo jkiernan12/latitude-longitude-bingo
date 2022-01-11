@@ -4,6 +4,7 @@ import { useLeafletContext } from '@react-leaflet/core'
 import L from 'leaflet'
 import 'leaflet-graticule'
 import '../css/GameMap.css'
+import propTypes from 'prop-types';
 
 function Graticule() {
   const context = useLeafletContext()
@@ -54,3 +55,7 @@ function GameMap({region}) {
 }
 
 export default GameMap
+
+GameMap.propTypes = {
+  region: propTypes.string.isRequired
+}
