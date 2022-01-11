@@ -7,6 +7,7 @@ function EndGameModal({ isOpen, message, close}) {
             <div className='modal-content'>
                 <button className="close-btn" onClick={close}>🆇</button>
                 <p>{message}</p>
+                <button className="ok-btn" onClick={close}>Ok</button>
             </div>
         </ReactModal>
     )

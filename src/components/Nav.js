@@ -10,7 +10,6 @@ const Nav = () => {
             <h1 className='Nav--header'>-Latitude- |Longitude| <br /><span className='Nav--header__bold'>BINGO</span></h1>
             </NavLink>
 
-
             <div className="region-navs">
                 <NavLink to="/africa" className="nav-link">Africa</NavLink>
                 <NavLink to="/asia" className="nav-link">Asia</NavLink>
