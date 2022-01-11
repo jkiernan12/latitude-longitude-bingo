@@ -1,7 +1,9 @@
 describe('South America game', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/')
-    cy.get('.Home--link').contains('South America').click()
+    cy.intercept('https://latitude-longitude-bingo-api.herokuapp.com/api/v1/countries').as('fetch-countries')
+    cy.visit('http://localhost:3000/');
+    cy.get('.Home--link').contains('South America').click();
+    cy.wait('@fetch-countries');
   })
   it('should display a bingo grid', () => {
     cy.get('.board');
