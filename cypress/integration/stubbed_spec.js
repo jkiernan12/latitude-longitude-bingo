@@ -379,16 +379,22 @@ describe('async stubbing', () => {
   })
 })
 
-describe('error handling', () => {
+describe('API error handling', () => {
   beforeEach(() => {
     cy.intercept('get', 'http://localhost:8080/api/v1/countries', {
-      statusCode: 400,
-      body: 'Whoops! Looks like something went wrong.'
+      statusCode: 500,
+      body: {
+        message: 'Oops! There was a problem.'
+      }
     })
     cy.visit('http://localhost:3000/')
     cy.get('.Home--link').contains('Africa').click();
   })
   it('should show some sort of error message when failing to connect to the API', () => {
-
+    cy.get('.modal-content').contains('Oops! There was a problem.')
+    cy.get('.close-btn').click();
+    cy.get('.nav-link').contains('South America').click();
+    cy.get('.bingo-btn').click();
+    cy.get('.modal-content').contains('Oops!')
   })
 })
