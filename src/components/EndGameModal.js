@@ -1,4 +1,5 @@
 import ReactModal from 'react-modal'
+import PropTypes from 'prop-types'
 import '../css/EndGameModal.css'
 
 function EndGameModal({ isOpen, message, close}) {
@@ -14,3 +15,13 @@ function EndGameModal({ isOpen, message, close}) {
 }
 
 export default EndGameModal
+
+EndGameModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    message: PropTypes.string,
+    close: PropTypes.func.isRequired
+}
+
+EndGameModal.defaultProps = {
+    isOpen: false
+}

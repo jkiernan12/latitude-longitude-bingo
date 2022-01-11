@@ -6,6 +6,7 @@ import { fetchCountryData } from '../apiCalls'
 import { winningBoards, getRandomList } from '../utils'
 import EndGameModal from './EndGameModal'
 import ReactModal from 'react-modal'
+import PropTypes from 'prop-types'
 
 ReactModal.setAppElement(document.getElementById('root'));
 
@@ -245,3 +246,7 @@ class Game extends Component {
 }
 
 export default Game;
+
+Game.propTypes = {
+  region: PropTypes.string.isRequired
+}
