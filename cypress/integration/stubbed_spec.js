@@ -378,3 +378,17 @@ describe('async stubbing', () => {
     cy.get('.modal-content').should('not.exist')
   })
 })
+
+describe('error handling', () => {
+  beforeEach(() => {
+    cy.intercept('get', 'http://localhost:8080/api/v1/countries', {
+      statusCode: 400,
+      body: 'Whoops! Looks like something went wrong.'
+    })
+    cy.visit('http://localhost:3000/')
+    cy.get('.Home--link').contains('Africa').click();
+  })
+  it('should show some sort of error message when failing to connect to the API', () => {
+
+  })
+})
