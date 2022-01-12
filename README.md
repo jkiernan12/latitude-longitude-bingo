@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# LATITUDE - LONGITUDE BINGO
+Inspired by a favorite geography lesson, this interactive game allows students to practice their map-reading skills by finding countries using latitude and longitude coordinates. Mod 3 Group Project for Turing School of Software and Design<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="1432" alt="Bingo-still" src="https://user-images.githubusercontent.com/75143561/149198550-fb69ce58-c7e4-401b-ae50-a031e499b141.png">
 
-## Available Scripts
+## Table of Contents
+  - [Visit the App!](#visit-the-app!)
+  - [Abstract](#abstract)
+  - [Code Architecture](#code-architecture-/technologies)
+  - [Illustrations](#illustrations)
+  - [Local Install + Setup](#local-install-+-setup)
+  - [Contributors](#contributors)
+  - [Wins](#wins)
+  - [Challenges + Improvements](#challenges-+-Improvements)
+  - [Project Specs](#project-specs)
 
-In the project directory, you can run:
+## Visit the App!
+  - Visit the deployed app [here](https://latitude-longitude-bingo.herokuapp.com/)!
 
-### `npm start`
+## Abstract
+  - This project was created in order to allow us to experiment with setting up our own  backend API. Using a [CSV file of country data](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv), we set up a PostgreSQL database, updated and modified it with Knex, and used Express.js to handle the server code. Then, we hosted the backend on Heroku (you can see our endpoint [here!](https://latitude-longitude-bingo-api.herokuapp.com/api/v1/countries)).
+  - If you'd like to look at the backend repo, it's hosted on GitHub [here](https://github.com/jkiernan12/latitude-longitude-bingo-api)!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Code Architecture / Technologies
+  - Javascript / CSS / HTML
+  - React
+  - Express.js
+  - Knex
+  - PostgreSQL
+  - Heroku
+  - Cypress
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Illustrations
 
-### `npm test`
+https://user-images.githubusercontent.com/75143561/149198193-a874deeb-517f-40d6-88f3-855aba3b45e6.mp4
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install + Setup
+  - If you'd like to run this repo locally, clone it down to your machine:
+  - `git clone git@github.com:jkiernan12/latitude-longitude-bingo.git`
+  - `cd latitude-longitude-bingo`
+  - Then, install the necessary dependencies:
+  - `npm install`
 
-### `npm run build`
+## Contributors
+  - [John Kiernan](https://github.com/jkiernan12)
+  - [Anna Kummer](https://github.com/annamkummer)
+  - [Nate Ewert-Krocker](https://github.com/newertkrocker)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Wins
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - We were able to construct a functioning backend! All three contributors are trained primarily in frontend technologies, so creating our own database was a step outside our comfort zone. Now we can tentatively claim to be "full-stack" developers!
+  - The game concept, a long-time dream of contributor Anna's dad, came together very nicely and resulted in a fun and engaging game.
+  - Integrating the Leaflet maps in the game was a great success, resulting in a much more dynamic and engaging user experience.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Challenges + Improvements
 
-### `npm run eject`
+  - Updating and editing our database was new and challenging -- as stated above, all three of the contributors are mostly trained in front-end technologies.
+  - Figuring out how the different pieces of the backend integrated and functioned together was a challenge -- but ultimately a success, as well.
+  - In the future, we would love to implement multiple difficulty levels -- sub-regions, perhaps, or larger pools of countries -- or even player feedback with each bingo square selection.
+  - Another possible (ambitious) extension would be multiplayer -- several users with different bingo boards being served the same set of coordinates, so an entire classroom of users could play together.
+  - Finally, we'd like to try linking the countries in the bingo squares to their Wikipedia pages, so that players could learn more about the countries listed.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Specs
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html).
