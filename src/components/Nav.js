@@ -6,7 +6,6 @@ import { useState } from 'react'
 const Nav = () => {
     let [ modalIsOpen, setModalIsOpen ] = useState(false)
 
-
     return (
         <nav className="navbar">
             <NavLink to="/" className="Nav--header__link">
