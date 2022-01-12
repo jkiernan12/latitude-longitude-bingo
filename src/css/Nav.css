@@ -1,13 +1,14 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  margin-right: 4%;
 }
 
 .region-navs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 50%;
+    width: 46%;
     align-items: center;  
 }
 

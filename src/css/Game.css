@@ -1,6 +1,6 @@
 .Game {
   display: flex;
-  justify-content: stretch;
+  justify-content: space-between;
   width: 100%;
 }
 
