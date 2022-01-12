@@ -1,4 +1,4 @@
-import '../css/Game.css';
+import '../css/Game.css'
 import GameBoard from './GameBoard'
 import React, { Component } from 'react'
 import GameMap from './GameMap'
@@ -8,7 +8,7 @@ import EndGameModal from './EndGameModal'
 import ReactModal from 'react-modal'
 import PropTypes from 'prop-types'
 
-ReactModal.setAppElement(document.getElementById('root'));
+ReactModal.setAppElement(document.getElementById('root'))
 
 class Game extends Component {
   constructor(props) {
@@ -74,7 +74,7 @@ class Game extends Component {
     }
 
     let filteredCountries = this.state.allCountries.filter(country => {
-      let countryRegions = country.regions.data;
+      let countryRegions = country.regions.data
       let lowerCaseRegions = countryRegions.map(region => {
         return region.toLowerCase()
       })
@@ -245,7 +245,7 @@ class Game extends Component {
   }
 }
 
-export default Game;
+export default Game
 
 Game.propTypes = {
   region: PropTypes.string.isRequired

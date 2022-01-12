@@ -33,6 +33,29 @@
     cursor: pointer;
 }
 
+.ok-btn {
+    width: 3em;
+    height: 1.5em;
+    border: none;
+    font-size: x-large;
+    color: white;
+    background-color: #98d740;
+    border-radius: 8px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.close-btn:hover, .ok-btn:hover {
+    transform: scale(105%);
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .modal {
+        width: 100vw;
+    }
+}
+
 @keyframes fade {
   from {
     opacity: 0;

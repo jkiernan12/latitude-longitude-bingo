@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { MapContainer, TileLayer, MapConsumer } from 'react-leaflet';
+import { MapContainer, TileLayer, MapConsumer } from 'react-leaflet'
 import { useLeafletContext } from '@react-leaflet/core'
 import L from 'leaflet'
 import 'leaflet-graticule'
 import '../css/GameMap.css'
-import propTypes from 'prop-types';
+import propTypes from 'prop-types'
 
 function Graticule() {
   const context = useLeafletContext()
@@ -35,7 +35,7 @@ function GameMap({region}) {
     'world': {center: [0, 0], zoom: 2}
   }
   
-  const [currRegionCoord, setCurrRegionCoord] = useState(regionCoordinates['world']);
+  const [currRegionCoord, setCurrRegionCoord] = useState(regionCoordinates['world'])
 
   useEffect(() => {
     setCurrRegionCoord(regionCoordinates[region])

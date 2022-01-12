@@ -23,7 +23,7 @@ const GameBoard = ({ squares, stamp }) => {
     )
 }
 
-export default GameBoard;
+export default GameBoard
 
 GameBoard.propTypes = {
     squares: PropTypes.array,
