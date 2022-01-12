@@ -1,5 +1,7 @@
 # LATITUDE - LONGITUDE BINGO
-Mod 3 Group Project
+Inspired by a favorite geography lesson, this interactive game allows students to practice their map-reading skills by finding countries using latitude and longitude coordinates. Mod 3 Group Project for Turing School of Software and Design<br>
+
+<img width="1432" alt="Bingo-still" src="https://user-images.githubusercontent.com/75143561/149198550-fb69ce58-c7e4-401b-ae50-a031e499b141.png">
 
 ## Table of Contents
   - [Visit the App!](#visit-the-app!)
@@ -16,7 +18,6 @@ Mod 3 Group Project
   - Visit the deployed app [here](https://latitude-longitude-bingo.herokuapp.com/)!
 
 ## Abstract
-  - Inspired by a favorite geography lesson, this interactive game allows students to practice their map-reading skills by finding countries using latitude and longitude coordinates. 
   - This project was created in order to allow us to experiment with setting up our own  backend API. Using a [CSV file of country data](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv), we set up a PostgreSQL database, updated and modified it with Knex, and used Express.js to handle the server code. Then, we hosted the backend on Heroku (you can see our endpoint [here!](https://latitude-longitude-bingo-api.herokuapp.com/api/v1/countries)).
   - If you'd like to look at the backend repo, it's hosted on GitHub [here](https://github.com/jkiernan12/latitude-longitude-bingo-api)!
 
@@ -61,7 +62,3 @@ https://user-images.githubusercontent.com/75143561/149198193-a874deeb-517f-40d6-
 
 ## Project Specs
   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html).
-
-
-
-
