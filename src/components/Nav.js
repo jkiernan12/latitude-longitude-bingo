@@ -1,13 +1,19 @@
 import '../css/Nav.css'
 import { NavLink } from 'react-router-dom'
+import HelpModal from './HelpModal'
+import { useState } from 'react'
 
 const Nav = () => {
+    let [ modalIsOpen, setModalIsOpen ] = useState(false)
+
 
     return (
         <nav className="navbar">
             <NavLink to="/" className="Nav--header__link">
             <h1 className='Nav--header'>-Latitude- |Longitude|<span className='Nav--header__bold'>BINGO</span></h1>
             </NavLink>
+            <button className="help-button" onClick={() => setModalIsOpen(true)}>How to play</button>
+            <HelpModal isOpen={modalIsOpen} close={() => setModalIsOpen(false)}></HelpModal>
 
             <div className="region-navs">
                 <NavLink to="/africa" className="nav-link">Africa</NavLink>
