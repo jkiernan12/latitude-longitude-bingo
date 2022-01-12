@@ -1,5 +1,4 @@
 import { Routes, Route, useParams } from 'react-router-dom'
-import { useState } from 'react'
 import '../css/App.css'
 import Home from './Home'
 import Region from './Region'
@@ -12,7 +11,7 @@ function App() {
         <Route path="/:region" element={<Region />} />
       </Routes>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App

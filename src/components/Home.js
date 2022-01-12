@@ -1,4 +1,4 @@
-import '../css/Home.css';
+import '../css/Home.css'
 import { NavLink } from 'react-router-dom'
 import continents from '../assets/images/Continents.svg'
 
@@ -21,4 +21,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Home

@@ -1,6 +1,5 @@
-import '../css/Nav.css';
-import { NavLink, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import '../css/Nav.css'
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
 

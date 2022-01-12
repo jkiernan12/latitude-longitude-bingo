@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom'
-import { useState } from 'react'
 import Nav from './Nav'
 import Game from './Game'
 
