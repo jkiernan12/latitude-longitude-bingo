@@ -39,3 +39,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 800px) {
+  .App {
+    height: 150vh;
+  }
+}
