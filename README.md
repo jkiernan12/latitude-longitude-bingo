@@ -2,14 +2,14 @@
 Mod 3 Group Project
 
 ## Table of Contents
-  - [Visit the App!](#live-app)
+  - [Visit the App!](#visit-the-app!)
   - [Abstract](#abstract)
-  - [Code Architecture](#code-architecture)
+  - [Code Architecture](#code-architecture-/technologies)
   - [Illustrations](#illustrations)
-  - [Local Install + Setup](#set-up)
+  - [Local Install + Setup](#local-install-+-setup)
   - [Contributors](#contributors)
-	- [Wins](#wins)
-	- [Challenges + Improvements](#challenges-+-Improvements)
+  - [Wins](#wins)
+  - [Challenges + Improvements](#challenges-+-Improvements)
   - [Project Specs](#project-specs)
 
 ## Visit the App!
@@ -44,11 +44,13 @@ Use [https://gifcap.dev/](https://gifcap.dev/) to make GIFs
   - [Nate Ewert-Krocker](https://github.com/newertkrocker)
 
 ## Wins
-	- We were able to construct a functioning backend! All three contributors are trained primarily in frontend technologies, so creating our own database was a step outside our comfort zone. Now we can tentatively claim to be "full-stack" developers!
+
+	- We were able to construct a functioning backend! All three contributors are trained primarily in frontend technologies, so creating our own database was a step outside our comfort zone. Now we can tentatively claim to be "full-stack" developers! 
 	- The game concept, a long-time dream of contributor Anna's dad, came together very nicely and resulted in a fun and engaging game.
   - Integrating the Leaflet maps in the game was a great success, resulting in a much more dynamic and engaging user experience.
 
 ## Challenges + Improvements
+
 	- Updating and editing our database was new and challenging -- as stated above, all three of the contributors are mostly trained in front-end technologies.
 	- Figuring out how the different pieces of the backend integrated and functioned together was a challenge -- but ultimately a success, as well.
 	- In the future, we would love to implement multiple difficulty levels -- sub-regions, perhaps, or larger pools of countries -- or even player feedback with each bingo square selection.
@@ -56,4 +58,4 @@ Use [https://gifcap.dev/](https://gifcap.dev/) to make GIFs
   - Finally, we'd like to try linking the countries in the bingo squares to their Wikipedia pages, so that players could learn more about the countries listed.
 
 ## Project Specs
-  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html)
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html).
