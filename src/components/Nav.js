@@ -7,7 +7,7 @@ const Nav = () => {
     return (
         <nav className="navbar">
             <NavLink to="/" className="Nav--header__link">
-            <h1 className='Nav--header'>-Latitude- |Longitude| <br /><span className='Nav--header__bold'>BINGO</span></h1>
+            <h1 className='Nav--header'>-Latitude- |Longitude|<span className='Nav--header__bold'>BINGO</span></h1>
             </NavLink>
 
 
