@@ -16,10 +16,11 @@ Mod 3 Group Project
   - Visit the deployed app [here](https://latitude-longitude-bingo.herokuapp.com/)!
 
 ## Abstract
+  - Inspired by a favorite geography lesson, this interactive game allows students to practice their map-reading skills by finding countries using latitude and longitude coordinates. 
   - This project was created in order to allow us to experiment with setting up our own  backend API. Using a [CSV file of country data](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv), we set up a PostgreSQL database, updated and modified it with Knex, and used Express.js to handle the server code. Then, we hosted the backend on Heroku (you can see our endpoint [here!](https://latitude-longitude-bingo-api.herokuapp.com/api/v1/countries)).
   - If you'd like to look at the backend repo, it's hosted on GitHub [here](https://github.com/jkiernan12/latitude-longitude-bingo-api)!
 
-## Code Architecture / Technologies
+## Code Architecture / Technolog
   - Javascript / CSS / HTML
   - React
   - Express.js
