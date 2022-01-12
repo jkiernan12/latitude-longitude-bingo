@@ -31,7 +31,7 @@ Mod 3 Group Project
 
 ## Illustrations
 
-Use [https://gifcap.dev/](https://gifcap.dev/) to make GIFs
+https://user-images.githubusercontent.com/75143561/149198193-a874deeb-517f-40d6-88f3-855aba3b45e6.mp4
 
 ## Install + Setup
   - If you'd like to run this repo locally, clone it down to your machine:
@@ -61,3 +61,7 @@ Use [https://gifcap.dev/](https://gifcap.dev/) to make GIFs
 
 ## Project Specs
   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html).
+
+
+
+
