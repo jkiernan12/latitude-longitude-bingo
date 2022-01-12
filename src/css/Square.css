@@ -6,10 +6,10 @@
     justify-content: center;
     align-items: center;
     transition: .2s;
-    font-size: clamp(.7em, 1em, 1.5em);
     line-height: .85em;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
+    width: 100%;
   }
   
 .false {
@@ -33,12 +33,22 @@
 }
 
 .flag-image {
-  max-width: 80%;
+  width: clamp(20%, 80%, 100%);
   max-height: 50%;
 }
 
-@media (max-width: 1200px) {
+.country-name {
+  margin: 5px;
+}
+
+@media (max-width: 900px) {
   .square {
-    font-size: 1em;
+    font-size: .85em;
+  }
+}
+
+@media (max-width: 500px) {
+  .square {
+    font-size: .75em;
   }
 }

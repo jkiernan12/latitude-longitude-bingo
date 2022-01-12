@@ -2,18 +2,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    width: 70%;
-    margin: 0 15%;
+    width: 95%;
+    max-width: 500px;
     row-gap: 1%;
     column-gap: 1%;
     justify-content: center;
     align-items: stretch;
    justify-items: stretch;
 }
-
-  @media (max-width: 1200px) {
-    .board {
-      width: 94%;
-      margin: 0 3%;
-    }
-  }

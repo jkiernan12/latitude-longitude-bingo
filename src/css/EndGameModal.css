@@ -3,7 +3,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 50vw;
+    width: 100vw;
+    animation: .2s ease-in-out fade;
 }
 
 .modal-content {
@@ -29,6 +30,7 @@
     background-color: #e2931d;
     border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .ok-btn {
@@ -52,4 +54,16 @@
     .modal {
         width: 100vw;
     }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
 }

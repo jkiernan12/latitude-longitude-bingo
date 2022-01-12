@@ -6,11 +6,15 @@
 
 .GameSpace {
   width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 } 
 
 .coordinates {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 96%;
     background-color: white;
     margin: 2%;
@@ -26,7 +30,7 @@
   border: none;
   border-radius: 12px;
   margin: 1%;
-  padding: 0 30px;
+  padding: 8px 30px;
   cursor: pointer;
   transition: .2s;
   box-shadow: 0, 0, black;
