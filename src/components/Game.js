@@ -37,12 +37,12 @@ class Game extends Component {
         while (this.state.calledCoordinateIds.includes(randomCountry.id)) {
           randomCountry = getRandomList(this.state.currentRegionCountries, 1)[0]
         }
-    
+
         let latNum = randomCountry.latitude
         let latDir = 'N'
         let longNum = randomCountry.longitude
         let longDir = 'E'
-        
+
         if (latNum < 0) {
           latNum = latNum * -1
           latDir = 'S'
@@ -51,9 +51,9 @@ class Game extends Component {
           longNum = longNum * -1
           longDir = 'W'
         }
-    
+
         console.log('called country: ', randomCountry.name)
-    
+
         this.setState({
           currentLat: latNum + latDir,
           currentLong: longNum + longDir,
@@ -95,11 +95,11 @@ class Game extends Component {
   handleBingoClick() {
     this.state.error ? this.setState({showModal: true}) :
     this.state.bingoBtnTxt === 'Set Game Board!' && this.setGameBoard()
-    this.state.bingoBtnTxt === 'BINGO!' && this.evaluateBoard() 
+    this.state.bingoBtnTxt === 'BINGO!' && this.evaluateBoard()
     this.state.bingoBtnTxt === 'Reset Board' && this.resetGame()
   }
 
-  setGameBoard() {    
+  setGameBoard() {
     let randomCountries = getRandomList(this.state.currentRegionCountries, 16)
 
     let squareCountries = randomCountries.map((randomCountry, index) => {
@@ -126,7 +126,7 @@ class Game extends Component {
     }).map(square => {
       return square.space
     })
-  
+
     let wins = []
     winningBoards.forEach(winBoard => {
       let match = []
@@ -215,9 +215,9 @@ class Game extends Component {
         allCountries: data
       }))
       .then(() => this.setFilteredCountries())
-      .catch(err => 
+      .catch(err =>
         {
-          let message = (err.message === 'Failed to fetch') ? 'Oops! There was a problem. Please check your internet connection or try again later.' : err.message
+          let message = 'Oops! There was a problem. Please check your internet connection or try again later.'
           this.setState({
             error: message,
             showModal: true
@@ -225,7 +225,7 @@ class Game extends Component {
         }
       )
   }
-    
+
   render() {
     return (
       <div className="Game">
